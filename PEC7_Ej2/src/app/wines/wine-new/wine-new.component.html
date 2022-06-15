@@ -1,0 +1,43 @@
+<h2>Create Wine</h2>
+
+<div class="form-group">
+  <form [formGroup]="wine" (ngSubmit)="createWine()" #wineForm="ngForm">     
+    <div class="wine-name">
+      <input type="text"
+             placeholder="Wine Name"
+             name="name"
+             formControlName="name">                          
+    </div>
+    <div *ngIf="(wine.controls['name'].errors && (wineForm.submitted || wine.controls['name'].dirty))">
+      <div *ngIf="wine.controls['name'].errors?.required" class="error-message">Wine name is required</div>
+      <div *ngIf="!wine.controls['name'].errors?.required && wine.controls['name'].errors?.NameWineValidator" class="error-message">Wine name is invalid</div>
+    </div>
+    
+    <div class="wine-price">
+        <input type="number"
+               placeholder="Wine Price"
+               formControlName="price">
+    </div>
+    <div *ngIf="(wine.controls['price'].errors && (wineForm.submitted || wine.controls['price'].dirty))">
+      <div *ngIf="wine.controls['price'].errors?.required" class="error-message">Wine price is required</div>
+      <div *ngIf="wine.controls['price'].errors?.min" class="error-message">Wine price must be at least 1</div>
+    </div>
+
+    <div class="wine-img">
+        <input type="text"
+               placeholder="Wine Image URL"
+               formControlName="imageUrl">
+    </div>
+    <div *ngIf="(wine.controls['imageUrl'].errors && (wineForm.submitted || wine.controls['imageUrl'].dirty))">
+      <div *ngIf="wine.controls['imageUrl'].errors?.required" class="error-message">Wine Image URL is required</div>
+      <div *ngIf="wine.controls['imageUrl'].errors?.pattern" class="error-message"> Wine Image URL does not seem to be a valid URL</div>
+    </div>
+
+    <div class="wine-sale">
+        <input id="wineSale" type="checkbox" formControlName="isOnSale">
+        <label for="wineSale">On Sale</label>
+    </div>
+    
+    <button type="submit">Create</button>
+  </form>
+</div>
