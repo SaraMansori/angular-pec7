@@ -1,0 +1,3 @@
+- Login UOC: smansori@uoc.edu
+- Nombre y apellidos del alumno: Sara Mansori Amar
+- Tareas realizadas: TBD
