@@ -1,13 +1,37 @@
 * {
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .content {
-    margin: 70px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  margin: 70px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: rgb(216, 225, 228);
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: 500;
+  margin-bottom: auto;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a.active {
+  font-weight: bold;
+}
+
+router-outlet {
+  margin: 0;
 }

@@ -1,5 +1,11 @@
-<div class="content">
-  <h1>TPV Vinoteca!</h1>
-  <app-wine-list #wineList></app-wine-list>
-  <app-wine-new (wineNew)="wineList.onNew()"></app-wine-new>
-</div>
+<nav class="navbar">
+  <span><a routerLink="/login" routerLinkActive="active">Login</a></span>
+  <span><a routerLink="/register" routerLinkActive="active">Register</a></span>
+  <span>
+    <a routerLink="/wine/list" routerLinkActive="active">Wine List</a>
+  </span>
+  <span>
+    <a routerLink="/wine/create" routerLinkActive="active">Create Wine</a>
+  </span>
+</nav>
+<router-outlet class="page-content"></router-outlet>

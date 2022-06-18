@@ -1,0 +1,16 @@
+<img [src]="wine.imageUrl | imageWine" alt="Botella de vino" />
+<h3>Details of {{ wine.name }}</h3>
+<p *ngIf="wine.description">Description: {{ wine.description }}</p>
+<p><b>Food pairings:</b></p>
+<ul>
+  <li *ngFor="let food of wine.foodPairing">
+    {{ food.name }} | {{ food.kcal }}kcal
+    <span *ngIf="food.vegan"> | VEGAN</span>
+    <span *ngIf="food.gluten"> | GLUTEN</span>
+  </li>
+</ul>
+<p>
+  <b>Price: </b>
+  {{ wine.price | currency: "EUR":"symbol":"1.2-2" }}
+</p>
+<a href="/wine/list">Back</a>
