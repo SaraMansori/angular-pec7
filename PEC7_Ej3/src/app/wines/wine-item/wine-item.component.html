@@ -1,0 +1,18 @@
+<div [ngClass]="{ item: wine, stock: wine.isOnSale }">
+  <a href="/wine/{{ wine.id }}">
+    <img [src]="wine.imageUrl | imageWine" alt="Botella de vino" />
+    <p>
+      {{ wine.name }}
+    </p>
+  </a>
+  <p>
+    <span>{{ wine.price | currency: "EUR":"symbol":"1.2-2" }}</span>
+  </p>
+  <div class="buttons">
+    <button *ngIf="wine.quantityInCart > 0" (click)="decrementInCart()">
+      -
+    </button>
+    <span>{{ wine.quantityInCart }}</span>
+    <button (click)="incrementInCart()">+</button>
+  </div>
+</div>

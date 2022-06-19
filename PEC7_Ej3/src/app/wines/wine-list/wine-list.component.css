@@ -1,0 +1,21 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: center;
+}
+.search {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 6rem;
+}
+
+.search input {
+  min-width: 100%;
+}
+
+h1 {
+  text-align: center;
+}

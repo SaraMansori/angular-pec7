@@ -1,0 +1,18 @@
+<h1>Wine List TPV</h1>
+<div class="search">
+  <input
+    type="text"
+    name="searchBox"
+    [(ngModel)]="searchString"
+    placeholder="Search Here"
+    (keyup)="search()"
+  />
+</div>
+<div class="list">
+  <div *ngFor="let wine of wines$ | async">
+    <app-wine-item
+      (quantityChange)="onQuantityChange($event)"
+      [wine]="wine"
+    ></app-wine-item>
+  </div>
+</div>
